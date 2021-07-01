@@ -54,7 +54,7 @@ def apply_gauss_cuda(channel, image_size, kernel):
 
     # Ejecuta las funciones en Cuda
     bdim = (MAX_BLOCK_SIZE, MAX_BLOCK_SIZE, 1)
-    gdim = (int(image_size[1]/MAX_BLOCK_SIZE), int(image_size[0]/MAX_BLOCK_SIZE))
+    gdim = (round(image_size[1]/MAX_BLOCK_SIZE), round(image_size[0]/MAX_BLOCK_SIZE))
     
     
     func(channel_gpu, kernel_gpu, channel_out_gpu, block=bdim, grid=gdim)
