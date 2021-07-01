@@ -30,7 +30,7 @@ def get_gaussian_global_func(w, h, ksize=3):
                     return false;
                 }
                 if (offset >= 0 && offset < %(N)s) {
-                    p_subimage[i_aux][j_aux] = p_image[offset];
+                    p_subimage[j_aux][i_aux] = p_image[offset];
                 } else {
                     return false;
                 }
